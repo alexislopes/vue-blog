@@ -1,11 +1,12 @@
 <template>
   <div id="app" class="container">
-    <div id="nav" class="row text-center">
+    <header-nice></header-nice>
+    <!--<div id="nav" class="row text-center">
       <router-link to="/">Home</router-link> | 
       <router-link to="/anotacoes">Anotações</router-link> | 
       <a v-if="usuario" @click="logout">Logout</a> 
       <router-link v-if="!usuario" to="/login">Login</router-link>
-    </div>
+    </div>-->
     <router-view/>
   </div>
 </template>
@@ -13,6 +14,7 @@
 <script>
 import { mapState } from 'vuex'
 import { mapMutations } from 'vuex'
+import Header from './views/Header'
 
 export default {
   name: 'app',
@@ -25,6 +27,9 @@ export default {
     ...mapMutations([
       'logout'
     ])
+  },
+  components: {
+    'header-nice': Header
   }
 }
 </script>

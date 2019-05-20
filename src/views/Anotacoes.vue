@@ -63,9 +63,9 @@ export default {
             texto: this.texto,
             usuario: this.usuario
           })
-        .then(res => {
-          this.assunto = ''
-          this.texto = ''
+        .then((res) => {
+          this.assunto = res.data.assunto
+          this.texto = res.data.texto
           this.atualizar()
         })
         .catch(error => console.log(error))
