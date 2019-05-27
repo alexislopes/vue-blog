@@ -1,58 +1,68 @@
 <template>
-<div id="container">
-  <div class="text-center" v-for="postagem in postagens" :key="postagem.id">
-    <div class="card" style="width: 18rem;">
-      <img class="card-img-top" src="https://static.fraseamor.com.br/content/assetz/uploads/2018/10/339-imagens-e-frases-as-mais-legais-de-bom-dia-frases-e-mensagens-legais-legais.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{postagem.titulo}}</h5>
-            <p class="card-text">{{postagem.chamada}}</p>
-              <a href="#" class="btn btn-primary">ver mais</a>
-        </div>
-    </div>  
+<div class="ui items">
+  <div class="item" v-for="post in postagens" :key="post.id">
+    <div class="image">
+      <img :src="post.imagem">
+    </div>
+    <div class="content">
+      <a class="header">{{post.titulo}}</a>
+      <div class="meta">
+        <span>{{post.chamada}}</span>
+      </div>
+      <div class="description">
+        <p></p>
+      </div>
+      <div class="extra">
+        {{post.autor}}
+      </div>
+    </div>
   </div>
 </div>
 </template>
 
 <script>
+  import faker from 'faker';
+  faker.locale = 'pt_BR';
+
   export default {
     data() {
       return {
         postagens: [
           {
-            titulo: 'Como desenhar',
-            autor: "João",
-            chamada: "Aprenda a desenhar",
-            texto: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non ex eu leo rutrum vestibulum. Etiam ut orci mollis, egestas mi sit amet, congue elit. Duis a lacinia dui. Nunc."
+            titulo: faker.name.title(),
+            imagem: faker.image.image(),
+            autor: faker.name.findName(),
+            chamada: faker.lorem.sentence(),
+            texto: faker.lorem.paragraph()
           },
           {
-            titulo: 'Como cozinhar',
-            autor: "Pedro",
-            chamada: "Aprenda a cozinhar",
-            texto: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non ex eu leo rutrum vestibulum. Etiam ut orci mollis, egestas mi sit amet, congue elit. Duis a lacinia dui. Nunc."
+            titulo: faker.name.title(),
+            imagem: faker.image.image(),
+            autor: faker.name.findName(),
+            chamada: faker.lorem.sentence(),
+            texto: faker.lorem.paragraph()
           },
           {
-            titulo: 'Como desenhar',
-            autor: "João",
-            chamada: "Aprenda a desenhar",
-            texto: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non ex eu leo rutrum vestibulum. Etiam ut orci mollis, egestas mi sit amet, congue elit. Duis a lacinia dui. Nunc."
+            titulo: faker.name.title(),
+            imagem: faker.image.image(),
+            autor: faker.name.findName(),
+            chamada: faker.lorem.sentence(),
+            texto: faker.lorem.paragraph()
           },
           {
-            titulo: 'Como desenhar',
-            autor: "João",
-            chamada: "Aprenda a desenhar",
-            texto: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non ex eu leo rutrum vestibulum. Etiam ut orci mollis, egestas mi sit amet, congue elit. Duis a lacinia dui. Nunc."
+            titulo: faker.name.title(),
+            imagem: faker.image.image(),
+            autor: faker.name.findName(),
+            chamada: faker.lorem.sentence(),
+            texto: faker.lorem.paragraph()
           },
           {
-            titulo: 'Como desenhar',
-            autor: "João",
-            chamada: "Aprenda a desenhar",
-            texto: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non ex eu leo rutrum vestibulum. Etiam ut orci mollis, egestas mi sit amet, congue elit. Duis a lacinia dui. Nunc."
-          },{
-            titulo: 'Como desenhar',
-            autor: "João",
-            chamada: "Aprenda a desenhar",
-            texto: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non ex eu leo rutrum vestibulum. Etiam ut orci mollis, egestas mi sit amet, congue elit. Duis a lacinia dui. Nunc."
-          },
+            titulo: faker.name.title(),
+            imagem: faker.image.image(),
+            autor: faker.name.findName(),
+            chamada: faker.lorem.sentence(),
+            texto: faker.lorem.paragraph()
+          }
         ]
       }
     }
@@ -68,8 +78,14 @@
     background-color: brown;
   }
 
-  .card {
-    margin: .5em
+  .item {
+    float: center;
+    background-color: black
+  }
+
+  .items {
+    margin: 2rem 0 0 2rem;
+    display: grid;
   }
 
 </style>
