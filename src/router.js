@@ -22,6 +22,16 @@ export default new Router({
       path: '/Login',
       name: 'login',
       component: () => import('./views/Login.vue')
+    },
+    {
+      path: '/escrever',
+      name: 'Escrever',
+      component: () => import('./views/Escrever.vue')
+    },
+    {
+      path: '/gerenciar',
+      name: 'Gerenciar',
+      component: () => import('./views/Gerenciar.vue')
     }
   ]
 })

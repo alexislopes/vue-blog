@@ -1,5 +1,5 @@
 <template>
-<div class="ui items">
+<div class="ui items container">
   <div class="item" v-for="post in postagens" :key="post.id">
     <div class="image">
       <img :src="post.imagem">
@@ -71,21 +71,8 @@
 </script>
 
 <style scoped>
-  #container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    width: 100%;
-    background-color: brown;
-  }
-
   .item {
-    float: center;
-    background-color: black
-  }
-
-  .items {
-    margin: 2rem 0 0 2rem;
-    display: grid;
+    margin-left: 2rem;
   }
 
 </style>
