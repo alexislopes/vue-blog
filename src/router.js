@@ -37,6 +37,11 @@ export default new Router({
       path: "/postdisplay",
       name: "Ver Post",
       component: () => import("./views/PostDisplay.vue")
+    },
+    {
+      path: "/manageuser",
+      name: "Gerenciar usuário",
+      component: () => import("./views/ManageUser.vue")
     }
   ]
 });

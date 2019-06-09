@@ -14,7 +14,8 @@ export default new Vuex.Store({
   state: {
     usuario: null,
     token: null,
-    selectedPost: null
+    selectedPost: null,
+    selectedUser: null
   },
   mutations: {
     setUsuario(state, usuario) {
@@ -29,6 +30,9 @@ export default new Vuex.Store({
     },
     setPostagem(state, postagem) {
       state.selectedPost = postagem;
+    },
+    setSelectedUser(state, user) {
+      state.selectedUser = user;
     }
   },
   actions: {}
