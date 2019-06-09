@@ -1,11 +1,11 @@
 <template>
-  <div class="ui comments">
-    <div class="comment">
-      <div class="content">
-        <a class="author">Christian Rocha</a>
-        <div
-          class="text"
-        >I'm very interested in this motherboard. Do you know if it'd work in a Intel LGA775 CPU socket?</div>
+  <div class="ui container">
+    <div class="ui comments" v-for="comment in comments" :key="comment.id">
+      <div class="comment">
+        <div class="content">
+          <a class="author">{{comment.name}}</a>
+          <div class="text">{{comment.body}}</div>
+        </div>
       </div>
     </div>
   </div>
@@ -27,13 +27,21 @@ export default {
   },
   mounted() {
     axios.get("https://jsonplaceholder.typicode.com/comments").then(res => {
+      let realcomments = [];
       this.comments = res.data;
-      console.log(this.comments);
+      console.log("comentários: ", this.comments);
+      this.comments.forEach(comment => {
+        if (comment.postId === this.selectedPost.id) {
+          realcomments.push(comment);
+        }
+        this.comments = realcomments;
+      });
+      console.log(this.comments.length);
     });
 
     axios.get("https://jsonplaceholder.typicode.com/users").then(res => {
       this.users = res.data;
-      console.log(this.users);
+      console.log("usuários: ", this.users);
     });
   },
   methods: {}
