@@ -13,7 +13,8 @@ export default new Vuex.Store({
   plugins: [vuexPersist.plugin],
   state: {
     usuario: null,
-    token: null
+    token: null,
+    selectedPost: null
   },
   mutations: {
     setUsuario(state, usuario) {
@@ -25,6 +26,9 @@ export default new Vuex.Store({
     logout(state) {
       state.token = null;
       state.usuario = null;
+    },
+    setPostagem(state, postagem) {
+      state.selectedPost = postagem;
     }
   },
   actions: {}
