@@ -1,3 +1,5 @@
 <template>
-    <h1> Gerenciar screen </h1>
+  <div class="ui container">
+    <h1>Gerenciar screen</h1>
+  </div>
 </template>
