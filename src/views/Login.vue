@@ -34,6 +34,7 @@
           </div>
         </div>
         <button class="ui submit button" type="submit">Login</button>
+        <router-link to="cadastro"><div class="ui submit button">Cadastrar</div></router-link>
       </div>
     </form>
   </div>

@@ -42,6 +42,11 @@ export default new Router({
       path: "/manageuser",
       name: "Gerenciar usuário",
       component: () => import("./views/ManageUser.vue")
+    },
+    {
+      path: "/cadastro",
+      name: 'cadastrar',
+      component: () => import("./views/Cadastro.vue")
     }
   ]
 });
